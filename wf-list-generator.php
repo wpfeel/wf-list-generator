@@ -36,6 +36,17 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'WFLG_VERSION', '1.0.0' );
+define( 'WFLG_DIR_PATH', plugin_dir_path( __FILE__ ) );
+define( 'WFLG_URL', plugin_dir_url( __FILE__ ) );
+define( 'WFLG_PUBLIC_URL', WFLG_URL . 'public/' );
+define( 'WFLG_ADMIN_URL', WFLG_URL . 'admin/' );
+define( 'WFLG_FILE', __FILE__ );
+define( 'WFLG_BASENAME', plugin_basename( __FILE__ ) );
+
+define( 'WFLG_ROOT_DIR_PATH', plugin_dir_path( __FILE__ ) );
+define( 'WFLG_ADMIN_DIR_PATH', WFLG_ROOT_DIR_PATH . 'admin/' );
+define( 'WFLG_PUBLIC_PATH', WFLG_ROOT_DIR_PATH . 'public/' );
+
 
 /**
  * The code that runs during plugin activation.

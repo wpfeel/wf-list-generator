@@ -1,15 +1,28 @@
+<?php
 
+//setting options class initialize
+$settings = new WFLG_Settings();
+$tabs = $settings->wflg_get_options_tabs();
+
+?>
 <div class="wrap">
     <h1>WF List Generator</h1>
-    <nav class="nav-tab-wrapper woo-nav-tab-wrapper">
-        <a href="edit.php?post_type=wf-list-generator&page=wflg-settings&tab=general" class="nav-tab nav-tab-active">General</a>
-        <a href="edit.php?post_type=wf-list-generator&page=wflg-settings&tab=post" class="nav-tab ">Post</a>
-        <a href="edit.php?post_type=wf-list-generator&page=wflg-settings&tab=page" class="nav-tab ">Page</a>
-        <a href="edit.php?post_type=wf-list-generator&page=wflg-settings&tab=author" class="nav-tab ">Author</a>
+    <nav class="nav nav-tab nav-tab-wrapper wflg-nav-tab-wrapper">
+
+        <?php
+            foreach( $tabs as $tab ) {
+
+                ?>
+                <a href="edit.php?post_type=wf-list-generator&page=wflg-settings&tab=<?php echo $tab['slug']; ?>"
+                   data-toggle="tab"
+                   class="<?php echo wflg_array_separator( ' ', $tab['class'] ); ?>"><?php echo $tab['title']; ?></a>
+                <?php
+            }
+        ?>
     </nav>
 
     <form method="post" action="" novalidate="novalidate">
-        <table class="fowrm-table" role="presentation">
+        <table class="form-table" role="presentation">
             <tr>
                 <th scope="row"><label for="wflg_layout">Layout</label></th>
                 <td>
@@ -45,7 +58,7 @@
             </tr>
             <tr>
                 <th scope="row"><label for="wflg_show_del_btn">Show Delete Button</label></th>
-                <td>   i
+                <td>
                     <input name="wflg_show_del_btn" type="checkbox" id="wflg_show_del_btn" value="1">
                     <p class="description"><?php echo sprintf( __('%s', 'wf-list-generator'), 'Select to show delete button in lists.'); ?></p>
                 </td>

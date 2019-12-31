@@ -99,9 +99,19 @@ class WF_List_Generator {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wflg-i18n.php';
 
 		/**
-		 * The class responsible for defining all actions that occur in the admin area.
+		 * Formating functionality
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wflg-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/formatting-functions.php';
+
+		/**
+		 * The functions to be executed in admin and public pages.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions.php';
+
+        /**
+         * The class responsible for defining all actions that occur in the admin area.
+         */
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wflg-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing

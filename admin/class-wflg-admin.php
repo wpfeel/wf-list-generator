@@ -53,6 +53,7 @@ class WFLG_Admin {
 		add_action( 'init', array($this, 'wflg_init') );
 		add_action( 'init', array($this, 'wflg_post_type') );
 		add_action( 'admin_menu', array($this, 'wflg_add_menu') );
+		add_action( 'admin_init', array($this, 'wflg_admin_includes') );
 
 	}
 
@@ -189,7 +190,16 @@ class WFLG_Admin {
 				break;
 		}
 		
-	}	
+	}
+
+    /**
+     * Admin includes
+     *
+     * @since    1.0.0
+     */
+	public function wflg_admin_includes() {
+        include('partials/classes/class-wflg-settings.php');
+    }
 
 	/**
 	 * Register the stylesheets for the admin area.
