@@ -28,22 +28,22 @@ class WFLG_Settings {
             array(
                 'title' => __( 'General', 'wf-list-generator' ),
                 'slug' => 'general',
-                'class' => array('nav-tab', 'nav-tab-active')
+                'class' => array('nav-item','nav-link', 'active')
             ),
             array(
                 'title' => __( 'Post', 'wf-list-generator' ),
                 'slug' => 'post',
-                'class' => array('nav-tab')
+                'class' => array('nav-item', 'nav-link')
             ),
             array(
                 'title' => __( 'Page', 'wf-list-generator' ),
                 'slug' => 'page',
-                'class' => array('nav-tab')
+                'class' => array('nav-item', 'nav-link')
             ),
             array(
                 'title' => __( 'Author', 'wf-list-generator' ),
                 'slug' => 'author',
-                'class' => array('nav-tab')
+                'class' => array('nav-item', 'nav-link')
             ),
 
         );
